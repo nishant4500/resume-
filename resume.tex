@@ -1,78 +1,81 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[margin=0.5in]{geometry}
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=0.7in]{geometry}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{fontenc}
-\usepackage{tgpagella} % change if not available
+\usepackage{tgpagella} % pleasant serif; change if not available
 \renewcommand{\familydefault}{\rmdefault}
 
-% Compact spacing
-\setlength{\parindent}{0pt}
-\setlist[itemize]{left=0pt, label=\textbullet, itemsep=1pt, topsep=2pt}
+% Compact section headings
 \titleformat{\section}{\large\bfseries}{}{0em}{}
-\titlespacing*{\section}{0pt}{6pt}{4pt}
+\titlespacing*{\section}{0pt}{6pt}{6pt}
 
-% Two-column-like layout using minipages for compactness
-\newcommand{\Name}{\LARGE\scshape Nishant Dwivedi}
-\newcommand{\Contact}{\small\href{mailto:idwivedi1204@gmail.com}{idwivedi1204@gmail.com} \; | \; +91-9125007419 \; | \; \href{https://www.linkedin.com/in/nishant1205/}{LinkedIn} \; | \; \href{https://github.com/nishant4500}{GitHub} \; | \; \href{https://leetcode.com/u/idwivedi1204/}{LeetCode}}
+% Small helper commands
+\newcommand{\header}[1]{\begin{center}\LARGE\scshape #1\end{center}}
+\newcommand{\contact}[1]{\begin{center}{\small #1}\end{center}}
+\newcommand{\subheading}[2]{\noindent\textbf{#1} \hfill {\small #2}\par}
+\newcommand{\itembullet}[1]{\item #1}
 
 \begin{document}
-\begin{center}
-  \Name\\[3pt]
-  \Contact
-\end{center}
+
+\header{Nishant Dwivedi}
+\contact{\href{mailto:idwivedi1204@gmail.com}{idwivedi1204@gmail.com} \; | \; +91-9125007419 \; | \; \href{https://www.linkedin.com/in/nishant1205/}{LinkedIn} \; | \; \href{https://github.com/nishant4500}{GitHub} \; | \; \href{https://leetcode.com/u/idwivedi1204/}{LeetCode}}
 
 \section*{Education}
-\textbf{Jaypee Institute of Information Technology, Noida} \hfill Sept 2022 -- May 2026\\
+\subheading{Jaypee Institute of Information Technology, Noida}{Sept 2022 -- May 2026}
 B.Tech., Electronics and Communication Engineering \hfill CGPA: 7.7/10
 
 \vspace{4pt}
-\textbf{Kendriya Vidyalaya, Raebareli} \hfill July 2021 -- July 2022\\
-Class XII \hfill 92.6\%
+\subheading{Kendriya Vidyalaya, Raebareli}{July 2021 -- July 2022}
+Class XII \hfill Percentage: 92.6\%
 
 \vspace{4pt}
-\textbf{Kendriya Vidyalaya, Raebareli} \hfill July 2019 -- July 2020\\
-Class X \hfill 91.2\%
+\subheading{Kendriya Vidyalaya, Raebareli}{July 2019 -- July 2020}
+Class X \hfill Percentage: 91.2\%
 
 \section*{Experience}
-\textbf{Research Intern — IIT BHU} \hfill May 2025 -- Jul 2025\\
-Topic: Reconfigurable Huygens’ Metasurface-Based Flat-Lens Antenna (Ka-Band)
-\begin{itemize}
-  \item Designed and simulated a low-profile electronically beam-steerable flat-lens antenna using Huygens' metasurface concepts.
-  \item Modeled unit-cell behavior and bias control with varactor diodes; developed MATLAB/Python phase programming for 3D beam steering.
-  \item Performed optimization and radiation-pattern visualization using MATLAB and Python.
+\subheading{Research Intern -- Indian Institute of Technology (IIT) BHU}{May 2025 -- July 2025}
+\begin{itemize}[left=*,noitemsep,nolistsep]
+  \item Worked on design and simulation of a low-profile, electronically beam-steerable flat-lens antenna using Huygens' metasurface principles (Ka-band).
+  \item Modeled unit-cells, implemented bias control using varactor diodes, and developed MATLAB/Python phase programming for 3D beam steering.
+  \item Simulated and optimized radiation patterns; visualized results with MATLAB and Python scripts.
 \end{itemize}
 
-\vspace{4pt}
-\textbf{Full-Stack E-Commerce Platform — Codectechnologies} \hfill Jul 2025 -- Aug 2025
-\begin{itemize}
-  \item Built a MERN application with JWT authentication, Stripe checkout, product search/filter, cart management and admin dashboard with RBAC.
+\vspace{6pt}
+\subheading{Full-Stack E-Commerce Platform -- Codectechnologies}{July 2025 -- August 2025}
+\begin{itemize}[left=*,noitemsep,nolistsep]
+  \item Built a MERN-stack e-commerce web application with JWT-based authentication and Stripe-powered checkout.
+  \item Implemented product listing, search/filter, cart management, and an admin dashboard with role-based access control.
 \end{itemize}
 
 \section*{Projects}
-\textbf{Transgender Support Web Platform} \hfill Jun 2024 -- Jul 2024
-\begin{itemize}
-  \item MERN full-stack app addressing discrimination, employment and housing; implemented real-time supportive chatbot (Node.js, WebSocket).
-  \item Built Job Opportunities Hub and Safe Spaces Locator using REST APIs and MongoDB geospatial queries; deployed frontend on Netlify, backend on Render.
+\subheading{Transgender Support Web Platform}{June 2024 -- July 2024}
+\begin{itemize}[left=*,noitemsep,nolistsep]
+  \item Enhanced a MERN full-stack application addressing discrimination, employment, and housing access challenges.
+  \item Implemented a real-time supportive chatbot (Node.js + WebSockets) for confidential guidance.
+  \item Built a Job Opportunities Hub and Safe Spaces Locator using REST APIs and MongoDB geospatial queries.
+  \item Added a moderated Blogs feature for community knowledge sharing; deployed frontend on Netlify and backend on Render with MongoDB.
 \end{itemize}
 
-\vspace{4pt}
-\textbf{Real-Time Chat \& Server Monitoring (Backend)} \hfill Mar 2023 -- Sep 2023
-\begin{itemize}
-  \item Developed Node.js-based real-time chat supporting concurrent users; integrated server-monitoring dashboard (CPU/memory) using Node Cluster, WebSockets and MongoDB; deployed on Heroku.
+\vspace{6pt}
+\subheading{Real-Time Chat \& Server Monitoring Application (Backend)}{Mar 2023 -- Sep 2023}
+\begin{itemize}[left=*,noitemsep,nolistsep]
+  \item Implemented a full-stack real-time chat app with Node.js backend supporting many concurrent users.
+  \item Built a real-time server monitoring dashboard showing CPU/memory metrics using Node.js (Cluster, WebSockets) and MongoDB.
+  \item Deployed to Heroku, maintaining high availability for chat and monitoring services.
 \end{itemize}
 
 \section*{Technical Skills}
-C++, Python, MATLAB, SQL, JavaScript, React.js, Node.js, HTML, CSS, Excel
+C++, SQL, MATLAB, Python, JavaScript, React.js, Node.js, HTML, CSS, Excel
 
 \section*{Achievements}
-\begin{itemize}
-  \item Solved 300+ problems on LeetCode/CodeChef (C++).
-  \item IEEE conference paper (ISPCC) on Solar Cell.
-  \item 1st place — IEEE Contest (\href{https://certificatlink.com/}{Link}).
-  \item Top 5 — Round 2, RIDEHACK 2024 (CICE Hub JIIT) (\href{https://drive.google.com/file/d/1dG66lAQD9de7Z82KSTbs3FbJTwxANfKZ/view?usp=sharing}{Link}).
+\begin{itemize}[left=*,noitemsep,nolistsep]
+  \item Solved 300+ competitive programming problems on LeetCode and CodeChef using C++.
+  \item Published IEEE International Conference paper (ISPCC) on topic: Solar Cell.
+  \item 1st Position in IEEE Contest: \href{https://certificatlink.com/}{Link}
+  \item Top 5 in Round 2 of RIDEHACK 2024 (CICE Hub JIIT): \href{https://drive.google.com/file/d/1dG66lAQD9de7Z82KSTbs3FbJTwxANfKZ/view?usp=sharing}{Link}
 \end{itemize}
 
 \end{document}
