@@ -1,0 +1,23 @@
+# URL: add this file to .github/workflows/build-latex.yml in your repo
+name: Build LaTeX Resume
+on:
+  push:
+    paths:
+      - 'resume.tex'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+      - name: Build PDF
+        run: latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode -file-line-error" resume.tex
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: resume.pdf
